@@ -1,4 +1,5 @@
 const grid = document.querySelector('.grid')
+
 const blockWidth = 100
 const blockHeight = 20
 
@@ -11,12 +12,19 @@ class Block {
     }
 }
 
-function addBlock(){
+const blocks = [
+    new Block(10,270)
+]
+
+
+function addBlocks() {
+    for (let i = 0; i < blocks.length; i++) {
     const block = document.createElement('div')
     block.classList.add('block')
-    block.style.left = '100px'
-    block.style.bottom = '50px'
+    block.style.left = blocks[i].bottomLeft[0] + 'px'
+    block.style.bottom = blocks[i].bottomLeft[1] + 'px'    
     grid.appendChild(block)
+    }
 } 
 
-addBlock()
+addBlocks()
