@@ -24,9 +24,11 @@ const blockHeight = 50
    new block(230,240),
    new block(340,240),
    new block(450,240),
-   new block(10,270),
-   new block(10,270),
-   new block(10,270),
+   new block(10,210),
+   new block(120,210),
+   new block(230,210),
+   new block(340,210),
+   new block(450,210),
  ]
 
  console.log(blocks[0])
