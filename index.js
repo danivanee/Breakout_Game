@@ -1,6 +1,6 @@
 const grid = document.querySelector('.grid')
-const blockWidth = 10
-const blockHeight = 270
+const blockWidth = 100
+const blockHeight = 50
 
  class block {
    constructor(xAxis, yAxis) {
@@ -11,18 +11,36 @@ const blockHeight = 270
    }
  }
 
+ const blocks = [
+   new block(10,270),
+   new block(120,270),
+   new block(230,270),
+   new block(340,270),
+   new block(450,270),
+   new block(10,270),
+   new block(10,270),
+   new block(10,270),
+   new block(10,270),
+   new block(10,270),
+   new block(10,270),
+   new block(10,270),
+   new block(10,270),
+   new block(10,270),
+   new block(10,270),
+ ]
 
+ console.log(blocks[0])
 
-
-
-function addBlock() {
-    const block = document.createElement('div')
-    block.classList.add('block')
-    block.style.left = '10px'
-    block.style.bottom = '270px'    
-    grid.appendChild(block)
+function addBlocks() {
+   for (let i = 0; i < blocks.length; i++) {
+      const block = document.createElement('div')
+      block.classList.add('block')
+      block.style.left = blocks[i].bottomLeft[0] + 'px'
+      block.style.bottom = blocks[i].bottomLeft[1] + 'px'    
+      grid.appendChild(block)
+   }
  }   
 
- addBlock()
+ addBlocks()
     
     
