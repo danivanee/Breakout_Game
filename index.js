@@ -6,7 +6,7 @@ const ballDiameter = 20
 const boardWidth = 560
 const boardHeight = 300
 let timerId
-let xDirection = 2
+let xDirection = -2
 let yDirection = 2
 
 const userStart = [230, 10]
@@ -113,6 +113,19 @@ timerId = setInterval(moveBall, 30)
 
 
 function checkForCollisions() {
+    for (let i = 0; i < blocks.length; i++) {
+        if (
+          (ballCurrentPosition[0] > blocks[i].bottomLeft[0] && ballCurrentPosition[0] < blocks[i].bottomRight[0]) &&
+           ((ballCurrentPosition[1] + ballDiameter) > blocks[i].bottomLeft[1] && ballCurrentPosition[1] < blocks[i].topLeft[1])
+        ) {
+          const allBlocks = Array.from(document.querySelectorAll('.block'))
+          console.log(allBlocks)
+        }
+    }
+
+
+
+
   if (
     ballCurrentPosition[0] >= (boardWidth - ballDiameter) || 
     ballCurrentPosition[1] >= (boardHeight - ballDiameter) ||
