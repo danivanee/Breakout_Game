@@ -125,9 +125,18 @@ function checkForCollisions() {
           changeDirection()
           score++
           scoreDisplay.innerHTML = score
-        }
-    }
+       
 
+// For win
+          if (blocks.length ===0) {
+          scoreDisplay.innerHTML = 'YOU WIN'
+          clearInterval(timerId)
+          document.removeEventListener('keydown', moveUser)
+          }
+    }
+}
+
+//check for wall
   if (
     ballCurrentPosition[0] >= (boardWidth - ballDiameter) || 
     ballCurrentPosition[1] >= (boardHeight - ballDiameter) ||
@@ -142,6 +151,7 @@ function checkForCollisions() {
     (ballCurrentPosition[1] > currentPosition[1] && ballCurrentPosition[1] < currentPosition[1] + blockHeight) 
   ) {
     changeDirection()
+
   }
 
   //game over
